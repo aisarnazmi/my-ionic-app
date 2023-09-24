@@ -1,0 +1,16 @@
+.table {
+    ion-row.header-row {
+        background-color: #f2f2f2;
+        font-weight: bold;
+    }
+    
+    ion-col {
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
+
+    ion-icon {
+        cursor: pointer;
+        // margin-right: 8px;
+    }
+}

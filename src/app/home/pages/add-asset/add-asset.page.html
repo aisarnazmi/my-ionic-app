@@ -1,0 +1,36 @@
+<ion-content class="ion-padding">
+  <h3>{{ isUpdating ? 'Update' : 'Add' }} Asset</h3>
+
+  <ion-list>
+    <ion-item>
+      <ion-input label="Aset Name" labelPlacement="floating" placeholder="Enter asset name" [(ngModel)]="asset.nama_aset"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Barcode" labelPlacement="floating" placeholder="Enter asset barcode" [(ngModel)]="asset.barcode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Model" labelPlacement="floating" placeholder="Enter asset model" [(ngModel)]="asset.model"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Jenama" labelPlacement="floating" placeholder="Enter asset brand" [(ngModel)]="asset.jenama"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Harga" type="number" labelPlacement="floating" placeholder="Enter asset price" [(ngModel)]="asset.Harga"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Lokasi" labelPlacement="floating" placeholder="Enter asset location" [(ngModel)]="asset.lokasi"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="KP Pemilik" labelPlacement="floating" placeholder="Enter asset owner IC" [(ngModel)]="asset.nokppemilik"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Gambar Aset" type="file" (change)="saveAssetWithImage($event)" labelPlacement="floating" [(ngModel)]="imgAsset"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <br>
+
+  <ion-button *ngIf="!isUpdating" expand="full" (click)="saveAsset()">Add Asset</ion-button>
+
+  <ion-button *ngIf="isUpdating" expand="full" (click)="updateAsset()">Update Asset</ion-button>
+</ion-content>

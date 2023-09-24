@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+  <h3>
+    Senarai Aset
+  </h3>
+
+  <ion-button (click)="goToCreateAssetPage()">Add Asset</ion-button>
+
+  <ion-grid class="table">
+    <ion-row class="header-row">
+      <ion-col>Bil.</ion-col>
+      <ion-col>Nama Aset</ion-col>
+      <ion-col>Barcode</ion-col>
+      <ion-col>Model</ion-col>
+      <ion-col>Jenama</ion-col>
+      <ion-col>Harga (RM)</ion-col>
+      <ion-col>Lokasi</ion-col>
+      <ion-col>Pemilik</ion-col>
+      <ion-col>Tindakkan</ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of assetList; let i = index">
+      <ion-col>{{ i + 1 }}</ion-col>
+      <ion-col>{{ item.nama_aset }}</ion-col>
+      <ion-col>{{ item.barcode }}</ion-col>
+      <ion-col>{{ item.model }}</ion-col>
+      <ion-col>{{ item.jenama }}</ion-col>
+      <ion-col>{{ item.harga }}</ion-col>
+      <ion-col>{{ item.lokasi }}</ion-col>
+      <ion-col>{{ item.nokppemilik }}</ion-col>
+      <ion-col class="ion-text-center">
+        <ion-icon name="create" color="warning" (click)="editAsset(item.id)"></ion-icon>
+        <ion-icon name="trash" color="danger" (click)="deleteAsset(item.id)"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="loadMoreAsset($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+</ion-content>

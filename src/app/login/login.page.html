@@ -1,0 +1,16 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <ion-list>
+      <ion-item>
+        <ion-input label="Email" labelPlacement="floating" 
+         placeholder="Enter Email" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Password" type="password" labelPlacement="floating" 
+         placeholder="Enter Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="full" (click)="login()">Login</ion-button>
+  </div>
+</ion-content>
